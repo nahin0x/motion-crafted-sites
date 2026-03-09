@@ -99,7 +99,7 @@ function StepCard({ step, index }: { step: typeof steps[0]; index: number }) {
             <span className="text-xs font-bold tracking-widest text-accent uppercase">
               Step {step.number}
             </span>
-            <span className="text-3xl">{step.illustration}</span>
+            <img src={step.illustration} alt={step.title} className="w-12 h-12 object-contain" />
           </div>
 
           {/* Mobile icon */}
