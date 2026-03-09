@@ -17,7 +17,7 @@ export default function FinalCTA() {
   };
 
   return (
-    <section id="contact" ref={ref} className="py-24 px-6">
+    <section id="contact" ref={ref} className="py-28 px-6">
       <motion.div
         initial={{ opacity: 0, y: 40, scale: 0.95 }}
         animate={isVisible ? { opacity: 1, y: 0, scale: 1 } : {}}
@@ -28,17 +28,27 @@ export default function FinalCTA() {
         <motion.div
           animate={{ y: [0, -15, 0], x: [0, 8, 0] }}
           transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-10 left-10 w-16 h-16 rounded-full bg-[hsl(var(--purple))]/10"
+          className="absolute top-10 left-10 w-16 h-16 rounded-full bg-primary/5"
         />
         <motion.div
           animate={{ y: [0, 10, 0], x: [0, -10, 0] }}
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-          className="absolute bottom-10 right-10 w-24 h-24 rounded-full bg-[hsl(var(--accent))]/15"
+          className="absolute bottom-10 right-10 w-24 h-24 rounded-full bg-accent/15"
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 relative z-10">
           {/* Left side */}
           <div>
+            {/* Trust trigger */}
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={isVisible ? { opacity: 1 } : {}}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="text-sm font-medium text-muted-foreground mb-4"
+            >
+              Join 50+ brands that scaled with our Shopify stores
+            </motion.p>
+
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={isVisible ? { opacity: 1, y: 0 } : {}}
@@ -64,6 +74,7 @@ export default function FinalCTA() {
             >
               <h3 className="font-semibold text-foreground text-sm">Book a Free 30-Minute Consultation</h3>
               <p className="text-xs text-muted-foreground mt-2">Get expert guidance and a custom strategy for your store.</p>
+              <p className="text-xs text-muted-foreground mt-1">📧 contact@devzeroone.com • ⏱ Response within 24 hours</p>
               <motion.a
                 href="https://calendly.com/devzeroone"
                 target="_blank"

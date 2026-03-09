@@ -1,6 +1,6 @@
 import { motion, type Easing } from "framer-motion";
 import { useScrollAnimation, useCountUp } from "@/hooks/useScrollAnimation";
-import { Check, ArrowRight } from "lucide-react";
+import { Check, ArrowRight, Shield } from "lucide-react";
 import BlurTypeText from "@/components/BlurTypeText";
 
 const plans = [
@@ -10,10 +10,10 @@ const plans = [
     price: 80,
     description: "Shopify Store Design + Shopify Free Theme + One Product Research + Logo + Branding",
     delivery: "7-day delivery • Unlimited Revisions",
-    bg: "bg-[hsl(var(--yellow-light))]",
+    bg: "bg-card",
     text: "text-foreground",
     btnClass: "bg-primary text-primary-foreground",
-    hoverShadow: "rgba(234,179,8,0.3)",
+    hoverShadow: "rgba(0,0,0,0.12)",
     badge: false,
     features: ["Functional website", "1 page", "Responsive design", "Content upload", "2 plugins/extensions", "E-commerce functionality", "1 product", "Payment Integration", "Opt-in form", "Autoresponder integration", "Speed optimization", "Hosting setup", "Social media icons"],
   },
@@ -23,10 +23,10 @@ const plans = [
     price: 250,
     description: "Shopify Store Design or Redesign + 20 Product Store + Winning Product Research + Logo + Branding",
     delivery: "10-day delivery • Unlimited Revisions",
-    bg: "bg-[hsl(var(--purple))]",
-    text: "text-white",
-    btnClass: "bg-white text-[hsl(var(--purple))]",
-    hoverShadow: "rgba(139,92,246,0.35)",
+    bg: "bg-primary",
+    text: "text-primary-foreground",
+    btnClass: "bg-accent text-accent-foreground",
+    hoverShadow: "rgba(0,0,0,0.25)",
     badge: true,
     features: ["Functional website", "5 pages", "Responsive design", "Content upload", "4 plugins/extensions", "E-commerce functionality", "20 products", "Payment Integration", "Opt-in form", "Autoresponder integration", "Speed optimization", "Hosting setup", "Social media icons"],
   },
@@ -36,16 +36,15 @@ const plans = [
     price: 300,
     description: "Premium Store Design + 50 Products + Branding + SEO + Winning Product Research + Apps Installation",
     delivery: "14-day delivery • Unlimited Revisions",
-    bg: "bg-[hsl(var(--blue-light))]",
+    bg: "bg-card",
     text: "text-foreground",
     btnClass: "bg-primary text-primary-foreground",
-    hoverShadow: "rgba(59,130,246,0.3)",
+    hoverShadow: "rgba(0,0,0,0.12)",
     badge: false,
     features: ["Functional website", "7 pages", "Responsive design", "Content upload", "6 plugins/extensions", "E-commerce functionality", "50 products", "Payment Integration", "Opt-in form", "Autoresponder integration", "Speed optimization", "Hosting setup", "Social media icons"],
   },
 ];
 
-// Center card (index 1) appears first, side cards fan out after
 const centerOut = {
   hidden: { opacity: 0, scale: 0.85, y: 40 },
   visible: (i: number) => {
@@ -77,7 +76,7 @@ export default function PricingSection() {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section id="pricing" ref={ref} className="py-24 px-6">
+    <section id="pricing" ref={ref} className="py-28 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="text-center">
           <BlurTypeText
@@ -105,11 +104,11 @@ export default function PricingSection() {
               animate={isVisible ? "visible" : "hidden"}
               variants={centerOut}
               whileHover={{ y: -10, boxShadow: `0 25px 50px -12px ${p.hoverShadow}` }}
-              className={`${p.bg} ${p.text} rounded-3xl p-8 md:p-10 flex flex-col relative`}
+              className={`${p.bg} ${p.text} rounded-3xl p-8 md:p-10 flex flex-col relative border border-border ${p.badge ? "md:scale-105 md:-my-4 z-10 border-accent" : ""}`}
             >
               {p.badge && (
-                <span className="absolute top-4 right-4 bg-[hsl(var(--accent))] text-[hsl(var(--accent-foreground))] text-xs font-bold px-3 py-1 rounded-full">
-                  BEST VALUE
+                <span className="absolute top-4 right-4 bg-accent text-accent-foreground text-xs font-bold px-3 py-1 rounded-full">
+                  MOST POPULAR
                 </span>
               )}
               <span className="text-sm font-medium opacity-80">{p.name}</span>
@@ -148,6 +147,29 @@ export default function PricingSection() {
             </motion.div>
           ))}
         </div>
+
+        {/* Trust signals */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          className="mt-10 flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground"
+        >
+          <div className="flex items-center gap-2">
+            <Shield className="w-4 h-4 text-accent-foreground" />
+            <span>30-day post-launch support included</span>
+          </div>
+          <span className="hidden sm:inline text-border">•</span>
+          <div className="flex items-center gap-2">
+            <Check className="w-4 h-4 text-accent-foreground" />
+            <span>Unlimited revisions on all plans</span>
+          </div>
+          <span className="hidden sm:inline text-border">•</span>
+          <div className="flex items-center gap-2">
+            <Check className="w-4 h-4 text-accent-foreground" />
+            <span>100% money-back guarantee</span>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
