@@ -76,8 +76,8 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
-      className="sticky mb-8"
-      style={{ top: `${96 + index * 20}px`, zIndex: index + 1 }}
+      className="sticky mb-20"
+      style={{ top: `${96 + index * 16}px`, zIndex: index + 1 }}
     >
       <div className="rounded-2xl border border-border bg-card overflow-hidden shadow-lg">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
