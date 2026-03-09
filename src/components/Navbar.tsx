@@ -35,9 +35,9 @@ export default function Navbar() {
           animate={{ y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           className={`w-full max-w-6xl rounded-full transition-all duration-300 ${
-            scrolled
-              ? "bg-background/90 backdrop-blur-xl border border-border shadow-lg"
-              : "bg-background/80 backdrop-blur-lg border border-border"
+            scrolled || open
+              ? "bg-background border border-border shadow-lg"
+              : "bg-background/95 backdrop-blur-xl border border-border"
           }`}
         >
           <div className="flex items-center justify-between px-4 md:px-6 py-3">
