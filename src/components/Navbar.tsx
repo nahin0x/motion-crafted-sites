@@ -3,7 +3,7 @@ import { Code, ArrowRight, Menu, X } from "lucide-react";
 import { motion, AnimatePresence, useScroll } from "framer-motion";
 import { useActiveSection } from "@/hooks/useActiveSection";
 
-const links = ["Home", "Services", "About", "Portfolio", "Pricing", "FAQ"];
+const links = ["Home", "Services", "Portfolio", "Pricing", "About", "FAQ"];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
