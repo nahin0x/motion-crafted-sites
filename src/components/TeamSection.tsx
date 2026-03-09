@@ -1,21 +1,132 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { MessageSquare, Search, CodeXml, RefreshCw, Rocket } from "lucide-react";
 import BlurTypeText from "@/components/BlurTypeText";
+import { useRef } from "react";
 
 const steps = [
-  { number: "1", title: "30 Minutes Consultancy", desc: "In this meeting we discuss about what you're trying to do, your business goals, and what you actually need to achieve your objectives.", icon: MessageSquare },
-  { number: "2", title: "Requirement & Analysis", desc: "We assess your project requirements and gather necessary assets or account access. We analyze everything based on your specific needs.", icon: Search },
-  { number: "3", title: "Implementation", desc: "We build your project with precision, implementing all features and functionalities according to the requirements we discussed.", icon: CodeXml },
-  { number: "4", title: "Revision", desc: "We review the project together, make necessary adjustments, and ensure everything meets your expectations perfectly.", icon: RefreshCw },
-  { number: "5", title: "Project Delivery", desc: "Your project is delivered with complete documentation and support for a smooth launch.", icon: Rocket },
+  {
+    number: "01",
+    title: "30 Minutes Consultancy",
+    desc: "We discuss your business goals, challenges, and what you actually need to achieve your objectives.",
+    icon: MessageSquare,
+    illustration: "💬",
+  },
+  {
+    number: "02",
+    title: "Requirement & Analysis",
+    desc: "We assess your project requirements and gather necessary assets. We analyze everything based on your specific needs.",
+    icon: Search,
+    illustration: "🔍",
+  },
+  {
+    number: "03",
+    title: "Implementation",
+    desc: "We build your project with precision, implementing all features and functionalities according to the agreed requirements.",
+    icon: CodeXml,
+    illustration: "⚙️",
+  },
+  {
+    number: "04",
+    title: "Revision",
+    desc: "We review the project together, make necessary adjustments, and ensure everything meets your expectations.",
+    icon: RefreshCw,
+    illustration: "🔄",
+  },
+  {
+    number: "05",
+    title: "Project Delivery",
+    desc: "Your project is delivered with complete documentation and support for a smooth launch.",
+    icon: Rocket,
+    illustration: "🚀",
+  },
 ];
+
+function StepCard({ step, index }: { step: typeof steps[0]; index: number }) {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: cardRef,
+    offset: ["start end", "center center"],
+  });
+
+  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 1, 1]);
+  const y = useTransform(scrollYProgress, [0, 0.5, 1], [80, 0, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.9, 1, 1]);
+  const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+
+  const isLeft = index % 2 === 0;
+
+  return (
+    <div ref={cardRef} className="relative mb-16 last:mb-0">
+      {/* Connector line (desktop) */}
+      {index < steps.length - 1 && (
+        <div className="hidden md:block absolute left-1/2 top-12 bottom-0 w-px -translate-x-1/2">
+          <div className="w-full h-full bg-border" />
+          <motion.div
+            className="absolute top-0 left-0 w-full bg-accent"
+            style={{ height: lineHeight }}
+          />
+        </div>
+      )}
+
+      {/* Circle on timeline (desktop) */}
+      <motion.div
+        style={{ opacity, scale }}
+        className="hidden md:flex absolute left-1/2 top-4 -translate-x-1/2 z-10"
+      >
+        <div className="w-12 h-12 rounded-full bg-primary border-4 border-background flex items-center justify-center shadow-lg">
+          <step.icon className="w-5 h-5 text-primary-foreground" />
+        </div>
+      </motion.div>
+
+      {/* Card */}
+      <motion.div
+        style={{ opacity, y, scale }}
+        className={`md:w-[calc(50%-48px)] ${isLeft ? "md:mr-auto md:pr-4" : "md:ml-auto md:pl-4"}`}
+      >
+        <motion.div
+          whileHover={{ y: -6 }}
+          transition={{ type: "spring", stiffness: 300, damping: 20 }}
+          className="rounded-2xl border border-border bg-card p-6 md:p-8 shadow-sm hover:shadow-xl hover:border-accent/40 transition-all duration-300"
+        >
+          {/* Step number + illustration */}
+          <div className="flex items-center justify-between mb-4">
+            <span className="text-xs font-bold tracking-widest text-accent uppercase">
+              Step {step.number}
+            </span>
+            <span className="text-3xl">{step.illustration}</span>
+          </div>
+
+          {/* Mobile icon */}
+          <div className="md:hidden mb-3 w-10 h-10 rounded-full bg-primary flex items-center justify-center">
+            <step.icon className="w-4 h-4 text-primary-foreground" />
+          </div>
+
+          <h3 className="text-lg font-bold text-foreground mb-2">{step.title}</h3>
+          <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
+
+          {/* Progress indicator */}
+          <div className="mt-4 flex items-center gap-2">
+            {steps.map((_, i) => (
+              <div
+                key={i}
+                className={`h-1 flex-1 rounded-full transition-colors ${
+                  i <= index ? "bg-accent" : "bg-border"
+                }`}
+              />
+            ))}
+          </div>
+        </motion.div>
+      </motion.div>
+    </div>
+  );
+}
 
 export default function TeamSection() {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section ref={ref} className="py-24 px-6 bg-muted/30">
+    <section ref={ref} className="py-28 px-6 bg-muted/30">
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -47,47 +158,9 @@ export default function TeamSection() {
 
         {/* Timeline */}
         <div className="mt-20 relative">
-          {/* Vertical line */}
-          <div className="absolute left-1/2 top-0 bottom-0 w-px bg-border -translate-x-1/2 hidden md:block" />
-
-          {steps.map((step, i) => {
-            const isLeft = i % 2 === 0;
-            return (
-              <motion.div
-                key={step.title}
-                initial={{ opacity: 0, x: isLeft ? -60 : 60 }}
-                animate={isVisible ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.2 + i * 0.15 }}
-                className="relative mb-12 last:mb-0"
-              >
-                {/* Circle on timeline */}
-                <div className="hidden md:flex absolute left-1/2 top-6 -translate-x-1/2 z-10">
-                  <div className="w-10 h-10 rounded-full bg-accent border-4 border-background flex items-center justify-center">
-                    <span className="text-sm font-bold text-accent-foreground">{step.number}</span>
-                  </div>
-                </div>
-
-                {/* Card */}
-                <div className={`md:w-[calc(50%-40px)] ${isLeft ? "md:mr-auto md:pr-4" : "md:ml-auto md:pl-4"}`}>
-                  <motion.div
-                    whileHover={{ y: -4, scale: 1.02 }}
-                    className="rounded-2xl border border-border bg-card p-6 transition-shadow hover:shadow-lg"
-                  >
-                    <div className="flex items-center gap-3 mb-3">
-                      <h3 className="text-base font-semibold text-foreground">{step.title}</h3>
-                      <step.icon className="w-5 h-5 text-accent" />
-                    </div>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
-
-                    {/* Mobile step number */}
-                    <div className="md:hidden mt-3 w-7 h-7 rounded-full bg-accent flex items-center justify-center">
-                      <span className="text-xs font-bold text-accent-foreground">{step.number}</span>
-                    </div>
-                  </motion.div>
-                </div>
-              </motion.div>
-            );
-          })}
+          {steps.map((step, i) => (
+            <StepCard key={step.title} step={step} index={i} />
+          ))}
         </div>
       </div>
     </section>
