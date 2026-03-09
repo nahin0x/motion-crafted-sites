@@ -4,19 +4,19 @@ import { Palette, RefreshCw, Code, Package, Zap, TrendingUp } from "lucide-react
 import BlurTypeText from "@/components/BlurTypeText";
 
 const services = [
-  { icon: Palette, label: "Shopify Store Design", desc: "Beautiful, conversion-focused store designs that capture your brand and drive sales.", bg: "bg-[hsl(var(--purple-light))]" },
-  { icon: RefreshCw, label: "Store Redesign", desc: "Transform your existing store with modern aesthetics and improved user experience.", bg: "bg-[hsl(var(--green-light))]" },
-  { icon: Code, label: "Custom Development", desc: "Tailored Shopify solutions with custom themes, apps, and integrations.", bg: "bg-[hsl(var(--blue-light))]" },
-  { icon: Package, label: "Dropshipping Setup", desc: "Complete dropshipping store setup with supplier integration and automation.", bg: "bg-[hsl(var(--yellow-light))]" },
-  { icon: Zap, label: "Store Optimization", desc: "Speed optimization, SEO, and conversion rate improvements for better performance.", bg: "bg-[hsl(var(--pink-light))]" },
-  { icon: TrendingUp, label: "Growth Strategy", desc: "Data-driven strategies to scale your e-commerce business and increase revenue.", bg: "bg-[hsl(var(--peach-light))]" },
+  { icon: Palette, label: "Shopify Store Design", desc: "Beautiful, conversion-focused store designs that capture your brand and drive sales." },
+  { icon: RefreshCw, label: "Store Redesign", desc: "Transform your existing store with modern aesthetics and improved user experience." },
+  { icon: Code, label: "Custom Development", desc: "Tailored Shopify solutions with custom themes, apps, and integrations." },
+  { icon: Package, label: "Dropshipping Setup", desc: "Complete dropshipping store setup with supplier integration and automation." },
+  { icon: Zap, label: "Store Optimization", desc: "Speed optimization, SEO, and conversion rate improvements for better performance." },
+  { icon: TrendingUp, label: "Growth Strategy", desc: "Data-driven strategies to scale your e-commerce business and increase revenue." },
 ];
 
 export default function ServicesSection() {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section id="services" ref={ref} className="py-24 px-6 bg-muted/30">
+    <section id="services" ref={ref} className="py-28 px-6 bg-muted/30">
       <div className="max-w-5xl mx-auto">
         <div className="text-center">
           <BlurTypeText
@@ -49,9 +49,11 @@ export default function ServicesSection() {
               animate={isVisible ? { opacity: 1, y: 0, scale: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.1 + i * 0.1, type: "spring", stiffness: 150 }}
               whileHover={{ y: -6, scale: 1.02 }}
-              className={`${s.bg} rounded-2xl p-6 cursor-pointer transition-colors duration-300`}
+              className="rounded-2xl p-6 cursor-pointer transition-all duration-300 bg-card border border-border hover:border-accent/50 hover:shadow-lg"
             >
-              <s.icon className="w-8 h-8 text-foreground mb-4" />
+              <div className="w-12 h-12 rounded-xl bg-accent/15 flex items-center justify-center mb-4">
+                <s.icon className="w-6 h-6 text-accent-foreground" />
+              </div>
               <h3 className="text-sm font-semibold text-foreground mb-2">{s.label}</h3>
               <p className="text-xs text-muted-foreground leading-relaxed">{s.desc}</p>
             </motion.div>

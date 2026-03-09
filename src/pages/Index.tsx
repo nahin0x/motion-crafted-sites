@@ -5,8 +5,8 @@ import AboutStats from "@/components/AboutStats";
 import ServicesSection from "@/components/ServicesSection";
 import CTABanner from "@/components/CTABanner";
 import PortfolioSection from "@/components/PortfolioSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
 import TeamSection from "@/components/TeamSection";
-
 import PricingSection from "@/components/PricingSection";
 import FAQSection from "@/components/FAQSection";
 import FinalCTA from "@/components/FinalCTA";
@@ -21,6 +21,7 @@ const Index = () => {
         <LogoMarquee />
         <ServicesSection />
         <PortfolioSection />
+        <TestimonialsSection />
         <CTABanner />
         <PricingSection />
         <AboutStats />

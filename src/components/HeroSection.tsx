@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useTypingAnimation } from "@/hooks/useTypingAnimation";
 import { useRef } from "react";
 
-const subtitleWords = "We design, develop, and optimize conversion focused Shopify stores for fast growing DTC brands worldwide.".split(" ");
+const subtitleWords = "We design high-converting Shopify stores that increase revenue and customer retention for fast-growing DTC brands worldwide.".split(" ");
 
 export default function HeroSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -95,16 +95,16 @@ export default function HeroSection() {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05, boxShadow: "0 10px 30px -10px rgba(0,0,0,0.3)" }}
               whileTap={{ scale: 0.97 }}
-              className="flex items-center gap-2 bg-primary text-primary-foreground px-8 py-3.5 rounded-full text-sm font-semibold transition-colors"
+              className="flex items-center gap-2 bg-primary text-primary-foreground px-10 py-4 rounded-full text-base font-semibold transition-colors"
             >
-              Book A Free Call <ArrowRight className="w-4 h-4" />
+              Get A Free Quote <ArrowRight className="w-5 h-5" />
             </motion.a>
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
-              className="flex items-center gap-2 px-8 py-3.5 rounded-full text-sm font-semibold border border-border text-foreground hover:bg-muted transition-colors"
+              className="flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold border border-border text-foreground hover:bg-muted transition-colors"
             >
-              View Our Project
+              View Our Work
             </motion.button>
           </motion.div>
 
@@ -151,7 +151,7 @@ export default function HeroSection() {
           }}
           className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-muted/60 border border-border backdrop-blur-sm shadow-xl"
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-purple/10 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-muted/10 to-transparent" />
 
           <div className="absolute inset-0 flex items-center justify-center">
             <motion.button

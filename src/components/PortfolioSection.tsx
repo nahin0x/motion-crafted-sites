@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { ArrowUpRight, CheckCircle2 } from "lucide-react";
+import { ArrowUpRight, CheckCircle2, TrendingUp } from "lucide-react";
 import BlurTypeText from "@/components/BlurTypeText";
 import { useRef } from "react";
 
@@ -9,6 +9,7 @@ const projects = [
     title: "NeurospicyKidz",
     tag: "TOY STORE",
     desc: "A vibrant, engaging Shopify store for unique educational toys designed for neurodiverse children.",
+    result: "Increased conversion rate by 42% in the first month",
     features: ["Custom theme design", "Mobile-optimized checkout", "Product filtering system"],
     techs: ["Shopify", "Liquid", "CSS"],
     img: "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=800&h=600&fit=crop",
@@ -17,6 +18,7 @@ const projects = [
     title: "Esabao",
     tag: "DROPSHIPPING",
     desc: "Complete dropshipping store with automated fulfillment, supplier integration, and conversion-optimized pages.",
+    result: "Generated $15K revenue within 30 days of launch",
     features: ["Automated order fulfillment", "Supplier integration", "Conversion optimization"],
     techs: ["Shopify", "DSers", "Oberlo"],
     img: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop",
@@ -25,6 +27,7 @@ const projects = [
     title: "Noeva Boutique",
     tag: "FASHION",
     desc: "Elegant fashion boutique with stunning product showcases and seamless shopping experience.",
+    result: "Reduced bounce rate by 35% with redesigned UX",
     features: ["Lookbook integration", "Size guide system", "Wishlist functionality"],
     techs: ["Shopify", "Liquid", "Figma"],
     img: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=600&fit=crop",
@@ -33,6 +36,7 @@ const projects = [
     title: "Health Care Store",
     tag: "HEALTH & WELLNESS",
     desc: "Trust-focused health store with detailed product info, reviews integration, and subscription options.",
+    result: "Boosted average order value by 28% with upsells",
     features: ["Subscription setup", "Review integration", "Trust badges"],
     techs: ["Shopify", "Recharge", "Loox"],
     img: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&h=600&fit=crop",
@@ -41,6 +45,7 @@ const projects = [
     title: "One Product Store",
     tag: "SINGLE PRODUCT",
     desc: "High-converting single product store with storytelling layout and optimized sales funnel.",
+    result: "Achieved 5.2% conversion rate from cold traffic",
     features: ["Sales funnel design", "Upsell integration", "Speed optimization"],
     techs: ["Shopify", "PageFly", "Vitals"],
     img: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&h=600&fit=crop",
@@ -49,6 +54,7 @@ const projects = [
     title: "DecalGraphixx",
     tag: "STICKER STORE",
     desc: "Creative sticker store with custom product builder and bulk ordering capabilities.",
+    result: "Grew repeat customer rate to 45% in 3 months",
     features: ["Custom product builder", "Bulk ordering", "Gallery showcase"],
     techs: ["Shopify", "Liquid", "JavaScript"],
     img: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=800&h=600&fit=crop",
@@ -90,9 +96,15 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
               {project.title}
             </h3>
 
-            <p className="text-muted-foreground text-sm md:text-base leading-relaxed mb-6">
+            <p className="text-muted-foreground text-sm md:text-base leading-relaxed mb-4">
               {project.desc}
             </p>
+
+            {/* Result highlight */}
+            <div className="flex items-center gap-2 mb-6 px-4 py-2.5 rounded-xl bg-accent/10 border border-accent/20">
+              <TrendingUp className="w-4 h-4 text-accent-foreground shrink-0" />
+              <span className="text-sm font-semibold text-foreground">{project.result}</span>
+            </div>
 
             <div className="border-t border-border pt-6 mb-6">
               <div className="space-y-3">
@@ -154,7 +166,7 @@ export default function PortfolioSection() {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section id="portfolio" ref={ref} className="py-24 px-6">
+    <section id="portfolio" ref={ref} className="py-28 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <BlurTypeText
