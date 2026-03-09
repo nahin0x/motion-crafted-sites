@@ -121,49 +121,60 @@ export default function Navbar() {
       {/* Mobile menu - rendered outside the pill navbar */}
       <AnimatePresence>
         {open && (
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.25 }}
-            className="fixed inset-x-0 top-[72px] z-40 md:hidden px-4"
-          >
-            <div className="bg-background border border-border rounded-2xl shadow-lg overflow-hidden">
-              <div className="flex flex-col p-4 gap-1">
-                {links.map((l, i) => {
-                  const linkId = getLinkId(l);
-                  const isActive = activeSection === linkId;
-                  return (
-                    <motion.button
-                      key={l}
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: i * 0.04 }}
-                      onClick={() => scrollTo(linkId)}
-                      className={`text-left px-4 py-3 text-sm font-medium rounded-lg transition-colors ${
-                        isActive
-                          ? "text-foreground bg-muted"
-                          : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
-                      }`}
-                    >
-                      {l}
-                    </motion.button>
-                  );
-                })}
-                <motion.a
-                  href="https://calendly.com/devzeroone"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.25 }}
-                  className="mt-2 flex items-center justify-center gap-2 bg-primary text-primary-foreground px-5 py-3 rounded-full text-sm font-semibold"
-                >
-                  Book A Free Call <ArrowRight className="w-4 h-4" />
-                </motion.a>
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-40 bg-foreground/20 backdrop-blur-sm md:hidden"
+              onClick={() => setOpen(false)}
+            />
+            {/* Menu */}
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.25 }}
+              className="fixed inset-x-0 top-[72px] z-50 md:hidden px-4"
+            >
+              <div className="bg-background border border-border rounded-2xl shadow-xl overflow-hidden">
+                <div className="flex flex-col p-4 gap-1">
+                  {links.map((l, i) => {
+                    const linkId = getLinkId(l);
+                    const isActive = activeSection === linkId;
+                    return (
+                      <motion.button
+                        key={l}
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: i * 0.04 }}
+                        onClick={() => scrollTo(linkId)}
+                        className={`text-left px-4 py-3 text-sm font-medium rounded-lg transition-colors ${
+                          isActive
+                            ? "text-foreground bg-muted"
+                            : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                        }`}
+                      >
+                        {l}
+                      </motion.button>
+                    );
+                  })}
+                  <motion.a
+                    href="https://calendly.com/devzeroone"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.25 }}
+                    className="mt-2 flex items-center justify-center gap-2 bg-primary text-primary-foreground px-5 py-3 rounded-full text-sm font-semibold"
+                  >
+                    Book A Free Call <ArrowRight className="w-4 h-4" />
+                  </motion.a>
+                </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </>
