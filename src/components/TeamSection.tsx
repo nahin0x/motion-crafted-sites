@@ -3,6 +3,11 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { MessageSquare, Search, CodeXml, RefreshCw, Rocket } from "lucide-react";
 import BlurTypeText from "@/components/BlurTypeText";
 import { useRef } from "react";
+import stepConsultation from "@/assets/step-consultation.png";
+import stepAnalysis from "@/assets/step-analysis.png";
+import stepImplementation from "@/assets/step-implementation.png";
+import stepRevision from "@/assets/step-revision.png";
+import stepDelivery from "@/assets/step-delivery.png";
 
 const steps = [
   {
@@ -10,35 +15,35 @@ const steps = [
     title: "30 Minutes Consultancy",
     desc: "We discuss your business goals, challenges, and what you actually need to achieve your objectives.",
     icon: MessageSquare,
-    illustration: "💬",
+    illustration: stepConsultation,
   },
   {
     number: "02",
     title: "Requirement & Analysis",
     desc: "We assess your project requirements and gather necessary assets. We analyze everything based on your specific needs.",
     icon: Search,
-    illustration: "🔍",
+    illustration: stepAnalysis,
   },
   {
     number: "03",
     title: "Implementation",
     desc: "We build your project with precision, implementing all features and functionalities according to the agreed requirements.",
     icon: CodeXml,
-    illustration: "⚙️",
+    illustration: stepImplementation,
   },
   {
     number: "04",
     title: "Revision",
     desc: "We review the project together, make necessary adjustments, and ensure everything meets your expectations.",
     icon: RefreshCw,
-    illustration: "🔄",
+    illustration: stepRevision,
   },
   {
     number: "05",
     title: "Project Delivery",
     desc: "Your project is delivered with complete documentation and support for a smooth launch.",
     icon: Rocket,
-    illustration: "🚀",
+    illustration: stepDelivery,
   },
 ];
 
