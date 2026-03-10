@@ -11,7 +11,7 @@ export default function CTABanner() {
         initial={{ opacity: 0, scale: 0.92, y: 30 }}
         animate={isVisible ? { opacity: 1, scale: 1, y: 0 } : {}}
         transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
-        className="max-w-5xl mx-auto bg-primary text-primary-foreground rounded-3xl p-10 md:p-16 flex flex-col md:flex-row items-center justify-between gap-8 overflow-hidden relative"
+        className="max-w-5xl mx-auto bg-primary text-primary-foreground rounded-3xl p-10 md:p-16 flex flex-col md:flex-row items-center justify-between gap-8 overflow-hidden relative shadow-[0_20px_60px_-15px_hsl(199_89%_60%/0.2)]"
       >
         {/* Decorative circles */}
         <motion.div
