@@ -35,7 +35,7 @@ export default function HeroSection() {
     <section
       id="home"
       ref={sectionRef}
-      className="relative w-full pt-48 2xl:pb-20 pb-10 px-6 overflow-hidden hero-gradient"
+      className="relative w-full pt-48 2xl:pb-20 pb-10 px-6 overflow-hidden bg-background"
     >
       <motion.div
         style={{ y: yParallax, opacity: opacityParallax }}

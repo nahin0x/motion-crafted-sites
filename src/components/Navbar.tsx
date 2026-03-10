@@ -19,7 +19,7 @@ export default function Navbar() {
 
   const getLinkId = (label: string) => {
     if (label === "About") return "about";
-    if (label === "How It Works") return "how-it-works";
+    if (label === "Contact") return "contact";
     return label.toLowerCase().replace(/\s/g, "");
   };
 
