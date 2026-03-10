@@ -101,7 +101,7 @@ export default function HeroSection() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: animDelay + 1.6 }}
+            transition={{ duration: 0.6, delay: 2.6 }}
             className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-6"
           >
             {stats.map((stat) => (
