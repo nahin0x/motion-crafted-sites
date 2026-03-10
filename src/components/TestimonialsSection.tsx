@@ -21,8 +21,8 @@ export default function TestimonialsSection() {
             transition={{ duration: 0.6 }}
             className="text-3xl md:text-5xl font-bold text-foreground"
           >
-            What our <span className="font-serif-display italic font-normal">valued</span> clients
-            <br />are saying about us
+            What Our Valued Clients
+            <br />Are Saying About Us
           </motion.h2>
         </div>
 
