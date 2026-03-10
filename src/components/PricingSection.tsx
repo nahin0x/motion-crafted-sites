@@ -106,7 +106,7 @@ export default function PricingSection() {
               <p className="mt-2 text-xs font-medium opacity-80">{p.delivery}</p>
 
               <div className="mt-6 mb-2">
-                <p className="text-xs font-semibold opacity-80 mb-3">What's Included</p>
+                <p className="text-sm font-bold opacity-90 mb-3">What's Included</p>
               </div>
               <ul className="space-y-2 flex-1">
                 {p.features.map((f) => (
