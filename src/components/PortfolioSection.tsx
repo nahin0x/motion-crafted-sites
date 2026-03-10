@@ -119,7 +119,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
 
             <div className="flex gap-3">
               <button className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-6 py-3 rounded-full text-sm font-semibold hover:opacity-90 transition-opacity">
-                View Project <ArrowUpRight className="w-4 h-4" />
+                Case Study <ArrowUpRight className="w-4 h-4" />
               </button>
             </div>
           </div>

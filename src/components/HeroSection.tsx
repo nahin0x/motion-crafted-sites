@@ -1,7 +1,8 @@
 import { ArrowRight, Play } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useTypingAnimation } from "@/hooks/useTypingAnimation";
 import { useRef, useState } from "react";
+
+const headlineWords = "High Converting Shopify Stores for DTC Brands".split(" ");
 
 const subtitleWords = "We design high-converting Shopify stores that increase revenue and customer retention for fast-growing DTC brands worldwide.".split(" ");
 
@@ -17,19 +18,12 @@ export default function HeroSection() {
   const yParallax = useTransform(scrollYProgress, [0, 1], [0, -80]);
   const opacityParallax = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
-  const headlinePart1 = "High Converting Shopify Stores ";
-  const headlinePart2 = "for DTC Brands";
-  const { displayedText: typed1 } = useTypingAnimation(headlinePart1, 45, 400);
-  const { displayedText: typed2, isComplete: done2, showCursor } = useTypingAnimation(headlinePart2, 45, 400 + headlinePart1.length * 45 + 100);
-
   const stats = [
     { value: "7+", label: "Projects Delivered" },
     { value: "5+", label: "Happy Clients" },
     { value: "2+", label: "Years Experience" },
     { value: "98%", label: "Client Satisfaction" },
   ];
-
-  const animDelay = 0.2 + (headlinePart1.length + headlinePart2.length) * 0.045;
 
   return (
     <section
@@ -39,29 +33,32 @@ export default function HeroSection() {
     >
       <motion.div
         style={{ y: yParallax, opacity: opacityParallax }}
-        className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+        className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch"
       >
         {/* Left — Text content */}
-        <div className="text-left">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.3, delay: 0.2 }}
-          >
-            <h1 className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold leading-tight tracking-tight text-foreground">
-              {typed1}{typed2}
+        <div className="text-left flex flex-col justify-center">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold leading-tight tracking-tight text-foreground">
+            {headlineWords.map((word, i) => (
               <motion.span
-                animate={{ opacity: showCursor ? 1 : 0 }}
-                className="inline-block w-[3px] h-[0.8em] bg-foreground ml-1 align-middle"
-                style={{ display: done2 ? "none" : "inline-block" }}
-              />
-            </h1>
-          </motion.div>
+                key={i}
+                initial={{ opacity: 0, y: 8, filter: "blur(6px)" }}
+                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                transition={{
+                  delay: 0.4 + i * 0.06,
+                  duration: 0.45,
+                  ease: "easeOut",
+                }}
+                className="inline-block mr-[0.3em]"
+              >
+                {word}
+              </motion.span>
+            ))}
+          </h1>
 
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: animDelay + 0.3 }}
+            transition={{ duration: 0.6, delay: 1.2 }}
             className="mt-6 text-lg text-muted-foreground max-w-lg"
           >
             {subtitleWords.map((word, i) => (
@@ -70,7 +67,7 @@ export default function HeroSection() {
                 initial={{ opacity: 0, y: 10, filter: "blur(4px)" }}
                 animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 transition={{
-                  delay: animDelay + 0.4 + i * 0.04,
+                  delay: 1.3 + i * 0.04,
                   duration: 0.4,
                 }}
                 className="inline-block mr-[0.3em]"
@@ -84,7 +81,7 @@ export default function HeroSection() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: animDelay + 1.2 }}
+            transition={{ duration: 0.5, delay: 2.2 }}
             className="mt-8 flex flex-wrap items-center gap-4"
           >
             <a
@@ -104,7 +101,7 @@ export default function HeroSection() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: animDelay + 1.6 }}
+            transition={{ duration: 0.6, delay: 2.6 }}
             className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-6"
           >
             {stats.map((stat) => (
@@ -121,7 +118,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="relative w-full aspect-video rounded-2xl overflow-hidden bg-muted/40 border border-border shadow-none"
+          className="relative w-full rounded-2xl overflow-hidden bg-muted/40 border border-border shadow-none aspect-video lg:aspect-auto lg:h-full"
         >
           {isPlaying ? (
             <iframe
