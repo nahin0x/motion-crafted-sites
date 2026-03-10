@@ -52,7 +52,7 @@ export default function ServicesSection() {
               className="rounded-2xl p-6 cursor-pointer transition-all duration-300 bg-card border border-border hover:border-accent/50 hover:shadow-lg"
             >
               <div className="w-12 h-12 rounded-xl bg-accent/15 flex items-center justify-center mb-4">
-                <s.icon className="w-6 h-6 text-accent-foreground" />
+                <s.icon className="w-6 h-6 text-accent" />
               </div>
               <h3 className="text-sm font-semibold text-foreground mb-2">{s.label}</h3>
               <p className="text-xs text-muted-foreground leading-relaxed">{s.desc}</p>
