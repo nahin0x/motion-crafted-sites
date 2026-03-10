@@ -78,7 +78,7 @@ export default function TeamSection() {
 
   return (
     <section id="how-it-works" ref={ref} className="py-28 px-6 bg-muted/30">
-      <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
         <div className="text-center">
           <BlurTypeText
             text="Our Process"

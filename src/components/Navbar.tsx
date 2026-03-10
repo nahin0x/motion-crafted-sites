@@ -3,7 +3,7 @@ import { Code, ArrowRight, Menu, X } from "lucide-react";
 import { motion, AnimatePresence, useScroll } from "framer-motion";
 import { useActiveSection } from "@/hooks/useActiveSection";
 
-const links = ["Home", "Services", "Portfolio", "Pricing", "How It Works", "About", "FAQ"];
+const links = ["Home", "Services", "Portfolio", "Pricing", "About", "Contact"];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -19,7 +19,7 @@ export default function Navbar() {
 
   const getLinkId = (label: string) => {
     if (label === "About") return "about";
-    if (label === "How It Works") return "how-it-works";
+    if (label === "Contact") return "contact";
     return label.toLowerCase().replace(/\s/g, "");
   };
 
