@@ -131,7 +131,7 @@ export default function FinalCTA() {
               type="submit"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
-              className="w-full flex items-center justify-center gap-2 bg-primary text-primary-foreground px-6 py-3.5 rounded-full text-sm font-semibold transition-colors"
+              className="w-full flex items-center justify-center gap-2 bg-primary text-primary-foreground px-6 py-3.5 rounded-full text-sm font-semibold btn-glow transition-all"
             >
               Send Message <ArrowRight className="w-4 h-4" />
             </motion.button>

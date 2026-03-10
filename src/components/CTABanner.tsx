@@ -55,7 +55,7 @@ export default function CTABanner() {
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.97 }}
-            className="flex items-center gap-2 bg-[hsl(var(--accent))] text-[hsl(var(--accent-foreground))] px-6 py-3 rounded-full text-sm font-semibold transition-colors"
+            className="flex items-center gap-2 bg-accent text-accent-foreground px-6 py-3 rounded-full text-sm font-semibold btn-glow transition-all"
           >
             Book A Free Call <ArrowRight className="w-4 h-4" />
           </motion.a>

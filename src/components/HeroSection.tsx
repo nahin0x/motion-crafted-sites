@@ -149,7 +149,7 @@ export default function HeroSection() {
             stiffness: 100,
             damping: 20,
           }}
-          className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-muted/60 border border-border backdrop-blur-sm shadow-xl"
+          className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-muted/60 border border-border backdrop-blur-sm shadow-xl card-glow transition-all duration-300"
         >
           <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-muted/10 to-transparent" />
 
