@@ -24,7 +24,7 @@
     --muted: 220 12% 95%;
     --muted-foreground: 220 8% 46%;
 
-    --accent: 215 70% 45%;
+    --accent: 168 64% 52%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -32,11 +32,11 @@
 
     --border: 220 10% 91%;
     --input: 220 10% 91%;
-    --ring: 215 70% 45%;
+    --ring: 168 64% 52%;
     --radius: 0.75rem;
 
-    --accent-glow: 215 80% 55%;
-    --accent-muted: 215 40% 88%;
+    --accent-glow: 168 70% 58%;
+    --accent-muted: 168 30% 90%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -68,11 +68,11 @@
   }
 
   .hero-gradient {
-    background: linear-gradient(135deg, hsl(215 40% 95%) 0%, hsl(0 0% 100%) 50%, hsl(215 30% 93%) 100%);
+    background: linear-gradient(135deg, hsl(168 30% 95%) 0%, hsl(0 0% 100%) 50%, hsl(168 20% 93%) 100%);
   }
 
   .cta-gradient {
-    background: linear-gradient(135deg, hsl(215 40% 95%) 0%, hsl(215 30% 93%) 100%);
+    background: linear-gradient(135deg, hsl(168 30% 95%) 0%, hsl(168 20% 93%) 100%);
   }
 }
 
