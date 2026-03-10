@@ -39,11 +39,10 @@ export default function AboutStats() {
           {values.map((v, i) => (
             <motion.div
               key={v.title}
-              initial={{ opacity: 0, y: 40, scale: 0.9 }}
-              animate={isVisible ? { opacity: 1, y: 0, scale: 1 } : {}}
-              transition={{ duration: 0.6, delay: 0.1 + i * 0.1, type: "spring", stiffness: 150 }}
-              whileHover={{ y: -6, scale: 1.02 }}
-              className="rounded-2xl p-6 cursor-pointer transition-all duration-300 bg-card border border-border hover:border-accent/50 hover:shadow-lg"
+              initial={{ opacity: 0, y: 30 }}
+              animate={isVisible ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.1 + i * 0.08 }}
+              className="rounded-2xl p-6 bg-card border border-border hover:border-accent/40 transition-colors duration-300"
             >
               <div className="w-12 h-12 rounded-xl bg-accent/15 flex items-center justify-center mb-4">
                 <v.icon className="w-6 h-6 text-accent-foreground" />

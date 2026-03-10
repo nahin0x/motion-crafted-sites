@@ -39,25 +39,21 @@ export default function FAQSection() {
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7, delay: 0.2 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
           className="mt-12"
         >
           <Accordion type="single" collapsible className="space-y-3">
             {faqs.map((f, i) => (
-              <motion.div
+              <AccordionItem
                 key={i}
-                initial={{ opacity: 0, x: -20 }}
-                animate={isVisible ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.5, delay: 0.25 + i * 0.08 }}
-                whileHover={{ scale: 1.02, x: 4 }}
+                value={`item-${i}`}
+                className="border border-border rounded-xl px-6 bg-card hover:border-accent/40 transition-colors duration-300"
               >
-                <AccordionItem value={`item-${i}`} className="border border-border rounded-xl px-6 bg-card transition-shadow duration-300 hover:shadow-md hover:border-accent/40">
-                  <AccordionTrigger className="text-left text-foreground hover:no-underline transition-colors duration-200">{f.q}</AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground">{f.a}</AccordionContent>
-                </AccordionItem>
-              </motion.div>
+                <AccordionTrigger className="text-left text-foreground hover:no-underline">{f.q}</AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">{f.a}</AccordionContent>
+              </AccordionItem>
             ))}
           </Accordion>
         </motion.div>
