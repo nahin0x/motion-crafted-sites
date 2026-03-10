@@ -93,9 +93,9 @@ export default function HeroSection() {
               href="https://calendly.com/devzeroone"
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ scale: 1.05, boxShadow: "0 10px 30px -10px rgba(0,0,0,0.3)" }}
+              whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
-              className="flex items-center gap-2 bg-primary text-primary-foreground px-10 py-4 rounded-full text-base font-semibold transition-colors"
+              className="flex items-center gap-2 bg-primary text-primary-foreground px-10 py-4 rounded-full text-base font-semibold btn-glow transition-all"
             >
               Get A Free Quote <ArrowRight className="w-5 h-5" />
             </motion.a>
@@ -149,7 +149,7 @@ export default function HeroSection() {
             stiffness: 100,
             damping: 20,
           }}
-          className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-muted/60 border border-border backdrop-blur-sm shadow-xl"
+          className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-muted/60 border border-border backdrop-blur-sm shadow-xl card-glow transition-all duration-300"
         >
           <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-muted/10 to-transparent" />
 
