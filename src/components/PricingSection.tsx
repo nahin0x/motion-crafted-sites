@@ -77,8 +77,7 @@ export default function PricingSection() {
             transition={{ duration: 0.6, delay: 0.15 }}
             className="text-3xl md:text-5xl font-bold text-foreground"
           >
-            Choose Your Best{" "}
-            <span className="font-serif-display italic font-normal">Package</span>
+            Choose Your Best Package
           </motion.h2>
         </div>
 
