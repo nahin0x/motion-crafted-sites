@@ -41,7 +41,7 @@ function StepCard({ step, index }: { step: typeof steps[0]; index: number }) {
 
       <motion.div style={{ opacity }} className="hidden md:flex absolute left-1/2 top-4 -translate-x-1/2 z-10">
         <div className="w-12 h-12 rounded-full bg-primary border-4 border-background flex items-center justify-center">
-          <step.icon className="w-5 h-5 text-primary-foreground" />
+          <span className="text-sm font-bold text-primary-foreground">{index + 1}</span>
         </div>
       </motion.div>
 
