@@ -50,9 +50,8 @@ function StepCard({ step, index }: { step: typeof steps[0]; index: number }) {
         className={`md:w-[calc(50%-48px)] ${isLeft ? "md:mr-auto md:pr-4" : "md:ml-auto md:pl-4"}`}
       >
         <div className="rounded-2xl border border-border bg-card p-6 md:p-8 hover:border-accent/40 transition-colors duration-300">
-          <div className="flex items-center justify-between mb-4">
+          <div className="mb-4">
             <span className="text-xs font-bold tracking-widest text-accent uppercase">Step {step.number}</span>
-            <img src={step.illustration} alt={step.title} className="w-12 h-12 object-contain" />
           </div>
 
           <div className="md:hidden mb-3 w-10 h-10 rounded-full bg-primary flex items-center justify-center">
