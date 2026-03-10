@@ -79,9 +79,9 @@ export default function FinalCTA() {
                 href="https://calendly.com/devzeroone"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.06, boxShadow: "0 10px 30px -10px rgba(0,0,0,0.2)" }}
+                whileHover={{ scale: 1.06 }}
                 whileTap={{ scale: 0.97 }}
-                className="mt-4 inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-full text-sm font-semibold transition-colors"
+                className="mt-4 inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-full text-sm font-semibold btn-glow transition-all"
               >
                 Book A Free Call <ArrowRight className="w-4 h-4" />
               </motion.a>
