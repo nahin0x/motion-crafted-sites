@@ -25,7 +25,7 @@ export default function FAQSection() {
           <BlurTypeText
             text="FAQ"
             isVisible={isVisible}
-            className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-3"
+            className="text-sm font-medium text-accent uppercase tracking-wider mb-3"
           />
           <motion.h2
             initial={{ opacity: 0, y: 20 }}

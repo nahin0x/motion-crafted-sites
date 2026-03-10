@@ -33,8 +33,7 @@ export default function FinalCTA() {
               Join 50+ brands that scaled with our Shopify stores
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight">
-              Ready to Build a High Converting{" "}
-              <span className="font-serif-display italic font-normal">Shopify Store?</span>
+              Ready to Build a High Converting Shopify Store?
             </h2>
             <p className="mt-4 text-muted-foreground">
               Let's discuss how we can help grow your e-commerce business with a conversion-focused Shopify solution.

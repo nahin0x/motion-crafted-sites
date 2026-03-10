@@ -56,7 +56,7 @@ function StepCard({ step, index }: { step: typeof steps[0]; index: number }) {
           </div>
 
           <div className="md:hidden mb-3 w-10 h-10 rounded-full bg-primary flex items-center justify-center">
-            <step.icon className="w-4 h-4 text-primary-foreground" />
+            <span className="text-sm font-bold text-primary-foreground">{index + 1}</span>
           </div>
 
           <h3 className="text-lg font-bold text-foreground mb-2">{step.title}</h3>

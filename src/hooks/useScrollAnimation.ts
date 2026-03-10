@@ -20,8 +20,10 @@ export function useScrollAnimation(threshold = 0.15) {
 
 export function useCountUp(target: number, isVisible: boolean, duration = 2000) {
   const [count, setCount] = useState(0);
+  const hasAnimated = useRef(false);
   useEffect(() => {
-    if (!isVisible) return;
+    if (!isVisible || hasAnimated.current) return;
+    hasAnimated.current = true;
     let start = 0;
     const step = target / (duration / 16);
     const interval = setInterval(() => {

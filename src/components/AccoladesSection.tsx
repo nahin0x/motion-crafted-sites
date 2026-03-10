@@ -35,10 +35,9 @@ export default function AccoladesSection() {
           transition={{ duration: 0.7 }}
           className="text-3xl md:text-5xl font-bold text-center text-foreground"
         >
-          Accolades and achievements
+          Accolades And Achievements
           <br />
-          celebration our{" "}
-          <span className="font-serif-display italic font-normal">design excellence</span>
+          Celebrating Our Design Excellence
         </motion.h2>
 
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
