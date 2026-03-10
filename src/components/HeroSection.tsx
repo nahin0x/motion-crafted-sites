@@ -118,7 +118,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="relative w-full aspect-video rounded-2xl overflow-hidden bg-muted/40 border border-border shadow-none"
+          className="relative w-full rounded-2xl overflow-hidden bg-muted/40 border border-border shadow-none aspect-video lg:aspect-auto lg:h-full"
         >
           {isPlaying ? (
             <iframe
