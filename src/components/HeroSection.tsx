@@ -58,7 +58,7 @@ export default function HeroSection() {
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: animDelay + 0.3 }}
+            transition={{ duration: 0.6, delay: 1.2 }}
             className="mt-6 text-lg text-muted-foreground max-w-lg"
           >
             {subtitleWords.map((word, i) => (
