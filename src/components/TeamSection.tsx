@@ -91,8 +91,7 @@ export default function TeamSection() {
             transition={{ duration: 0.6, delay: 0.15 }}
             className="text-3xl md:text-5xl font-bold text-foreground"
           >
-            How Does It{" "}
-            <span className="font-serif-display italic font-normal">Work</span>
+            How Does It Work
           </motion.h2>
           <BlurTypeText
             text="Our proven 5-step process to deliver exceptional results"
