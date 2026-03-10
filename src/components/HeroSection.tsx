@@ -95,7 +95,7 @@ export default function HeroSection() {
             >
               Get A Free Quote <ArrowRight className="w-5 h-5" />
             </a>
-            <button className="flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold border border-border text-foreground hover:bg-muted transition-colors">
+            <button className="flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold bg-primary-foreground text-primary border border-border hover:opacity-90 transition-opacity">
               View Our Work
             </button>
           </motion.div>
