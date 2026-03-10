@@ -65,32 +65,22 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
   const cardRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: cardRef,
-    offset: ["start end", "end start"],
+    offset: ["start end", "center center"],
   });
-  const imgY = useTransform(scrollYProgress, [0, 1], [-30, 30]);
+
+  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 1, 1]);
+  const y = useTransform(scrollYProgress, [0, 0.5, 1], [60, 0, 0]);
+
+  const isLeft = index % 2 === 0;
 
   return (
-    <motion.div
-      ref={cardRef}
-      initial={{ opacity: 0, y: 60 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
-      className="sticky mb-20"
-      style={{ top: `${96 + index * 16}px`, zIndex: index + 1 }}
-    >
-      <div className="rounded-2xl border border-border bg-card overflow-hidden shadow-lg">
+    <div ref={cardRef} className="sticky mb-20 last:mb-0" style={{ top: `${96 + index * 16}px`, zIndex: index + 1 }}>
+      <motion.div style={{ opacity, y }} className="rounded-2xl border border-border bg-card overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
           <div className="p-8 md:p-12 flex flex-col justify-center">
-            <motion.span
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="text-xs font-bold tracking-widest text-accent uppercase mb-4"
-            >
+            <span className="text-xs font-bold tracking-widest text-accent uppercase mb-4">
               {project.tag}
-            </motion.span>
+            </span>
 
             <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4 font-serif-display">
               {project.title}
@@ -100,7 +90,6 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
               {project.desc}
             </p>
 
-            {/* Result highlight */}
             <div className="flex items-center gap-2 mb-6 px-4 py-2.5 rounded-xl bg-accent/10 border border-accent/20">
               <TrendingUp className="w-4 h-4 text-accent-foreground shrink-0" />
               <span className="text-sm font-semibold text-foreground">{project.result}</span>
@@ -108,18 +97,11 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
 
             <div className="border-t border-border pt-6 mb-6">
               <div className="space-y-3">
-                {project.features.map((feat, i) => (
-                  <motion.div
-                    key={feat}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.3 + i * 0.08 }}
-                    className="flex items-center gap-3"
-                  >
+                {project.features.map((feat) => (
+                  <div key={feat} className="flex items-center gap-3">
                     <CheckCircle2 className="w-4 h-4 text-accent shrink-0" />
                     <span className="text-sm text-muted-foreground">{feat}</span>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
             </div>
@@ -136,29 +118,24 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
             </div>
 
             <div className="flex gap-3">
-              <motion.button
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-                className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-6 py-3 rounded-full text-sm font-semibold"
-              >
+              <button className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-6 py-3 rounded-full text-sm font-semibold hover:opacity-90 transition-opacity">
                 View Project <ArrowUpRight className="w-4 h-4" />
-              </motion.button>
+              </button>
             </div>
           </div>
 
           <div className="relative overflow-hidden bg-muted min-h-[300px] lg:min-h-[unset]">
-            <motion.img
+            <img
               src={project.img}
               alt={project.title}
               className="w-full h-full object-cover absolute inset-0"
-              style={{ y: imgY }}
               loading="lazy"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-card/60 via-transparent to-transparent lg:bg-gradient-to-l lg:from-card/30 lg:via-transparent lg:to-transparent" />
           </div>
         </div>
-      </div>
-    </motion.div>
+      </motion.div>
+    </div>
   );
 }
 
