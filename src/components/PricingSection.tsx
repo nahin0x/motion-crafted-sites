@@ -116,11 +116,14 @@ export default function PricingSection() {
                 ))}
               </ul>
 
-              <button
+              <a
+                href="https://calendly.com/devzeroone"
+                target="_blank"
+                rel="noopener noreferrer"
                 className={`${p.btnClass} mt-8 flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-sm font-semibold hover:opacity-90 transition-opacity`}
               >
                 Book a Call <ArrowRight className="w-4 h-4" />
-              </button>
+              </a>
             </motion.div>
           ))}
         </div>

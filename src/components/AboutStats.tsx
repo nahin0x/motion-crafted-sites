@@ -44,7 +44,7 @@ export default function AboutStats() {
               className="rounded-2xl p-6 bg-card border border-border hover:border-accent/40 transition-colors duration-300"
             >
               <div className="w-12 h-12 rounded-xl bg-accent/15 flex items-center justify-center mb-4">
-                <v.icon className="w-6 h-6 text-accent-foreground" />
+                <v.icon className="w-6 h-6 text-accent" />
               </div>
               <h3 className="text-sm font-semibold text-foreground mb-2">{v.title}</h3>
               <p className="text-xs text-muted-foreground leading-relaxed">{v.desc}</p>

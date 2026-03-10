@@ -31,11 +31,11 @@ export default function CTABanner() {
             href="https://calendly.com/devzeroone"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 bg-accent text-accent-foreground px-6 py-3 rounded-full text-sm font-semibold hover:opacity-90 transition-opacity"
+            className="flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-full text-sm font-bold btn-glow hover:opacity-90 transition-opacity shadow-lg"
           >
             Book A Free Call <ArrowRight className="w-4 h-4" />
           </a>
-          <button className="px-6 py-3 rounded-full text-sm font-semibold border border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 transition-colors">
+          <button className="px-8 py-4 rounded-full text-sm font-semibold border-2 border-foreground/20 text-foreground hover:bg-foreground/5 transition-colors">
             View Portfolio
           </button>
         </div>
