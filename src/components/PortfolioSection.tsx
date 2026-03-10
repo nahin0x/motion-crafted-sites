@@ -74,7 +74,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
   const isLeft = index % 2 === 0;
 
   return (
-    <div ref={cardRef} className="sticky mb-20 last:mb-0" style={{ top: `${96 + index * 16}px`, zIndex: index + 1 }}>
+    <div ref={cardRef} className="sticky mb-32 last:mb-0" style={{ top: `${96 + index * 16}px`, zIndex: index + 1 }}>
       <motion.div style={{ opacity, y }} className="rounded-2xl border border-border bg-card overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
           <div className="p-8 md:p-12 flex flex-col justify-center">
