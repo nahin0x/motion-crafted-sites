@@ -67,7 +67,7 @@ export default function HeroSection() {
                 initial={{ opacity: 0, y: 10, filter: "blur(4px)" }}
                 animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 transition={{
-                  delay: animDelay + 0.4 + i * 0.04,
+                  delay: 1.3 + i * 0.04,
                   duration: 0.4,
                 }}
                 className="inline-block mr-[0.3em]"
