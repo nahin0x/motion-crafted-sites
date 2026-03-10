@@ -1,15 +1,15 @@
 import { motion } from "framer-motion";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { Star, Rocket, ShoppingBag, BarChart3, Shield, Headphones } from "lucide-react";
+import { Heart, Handshake, Star, TrendingUp, Target, CircleDot } from "lucide-react";
 import BlurTypeText from "@/components/BlurTypeText";
 
 const values = [
-  { icon: Star, title: "Client satisfaction first", desc: "98% satisfaction rate — your success is the only metric that matters to us." },
-  { icon: Rocket, title: "Conversion focused design", desc: "Every pixel is engineered to convert visitors into paying customers." },
-  { icon: ShoppingBag, title: "Shopify specialists", desc: "Deep expertise in the Shopify ecosystem — themes, apps, Liquid, and APIs." },
-  { icon: BarChart3, title: "Revenue driven approach", desc: "Data-backed strategies designed to maximize ROI and grow your bottom line." },
-  { icon: Shield, title: "30-day post-launch support", desc: "We stand behind every project with dedicated support after delivery." },
-  { icon: Headphones, title: "Dedicated project manager", desc: "A single point of contact who knows your business inside and out." },
+  { icon: Heart, title: "Treats your business like our own", desc: "We work with full ownership and responsibility, focusing on what truly benefits your business growth and long-term success." },
+  { icon: Handshake, title: "Trusted business partner", desc: "More than a service provider, we collaborate closely with you to understand goals and build strategies that deliver results." },
+  { icon: Star, title: "Client satisfaction is top priority", desc: "Your satisfaction drives every decision we make, ensuring quality delivery, clear communication, and consistent improvements." },
+  { icon: TrendingUp, title: "Focus on long-term growth", desc: "We design scalable solutions that support sustainable growth instead of short-term wins or quick fixes." },
+  { icon: Target, title: "Delivers real results", desc: "Our strategies are data-driven and conversion-focused, helping you increase sales, engagement, and overall performance." },
+  { icon: CircleDot, title: "Data-driven decision making", desc: "We analyze user behavior and performance metrics to make informed decisions that improve conversions and maximize ROI." },
 ];
 
 export default function AboutStats() {
