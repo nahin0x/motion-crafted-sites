@@ -19,10 +19,10 @@ export default function CTABanner() {
         <div className="absolute -bottom-16 -left-16 w-48 h-48 rounded-full bg-primary-foreground/5" />
 
         <div className="relative z-10">
-          <h3 className="text-2xl md:text-3xl font-bold">
+          <h3 className="text-2xl md:text-3xl font-bold text-foreground">
             Ready to Start Your Shopify Journey?
           </h3>
-          <p className="mt-2 text-primary-foreground/70 text-lg">
+          <p className="mt-2 text-foreground/70 text-lg">
             Let's build a store that converts!
           </p>
         </div>
