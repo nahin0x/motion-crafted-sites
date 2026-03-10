@@ -109,8 +109,8 @@ export default function HeroSection() {
           >
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-foreground">{stat.value}</div>
-                <div className="text-xs text-muted-foreground mt-1">{stat.label}</div>
+                <div className="text-2xl md:text-3xl font-bold text-primary-foreground">{stat.value}</div>
+                <div className="text-xs text-primary-foreground/70 mt-1">{stat.label}</div>
               </div>
             ))}
           </motion.div>
