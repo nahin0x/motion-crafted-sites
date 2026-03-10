@@ -77,7 +77,7 @@ export default function TeamSection() {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section ref={ref} className="py-28 px-6 bg-muted/30">
+    <section id="how-it-works" ref={ref} className="py-28 px-6 bg-muted/30">
       <div className="max-w-4xl mx-auto">
         <div className="text-center">
           <BlurTypeText
