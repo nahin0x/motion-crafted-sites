@@ -157,8 +157,7 @@ export default function PortfolioSection() {
             transition={{ duration: 0.6, delay: 0.15 }}
             className="text-3xl md:text-5xl font-bold text-foreground"
           >
-            Our Recent{" "}
-            <span className="font-serif-display italic font-normal">Work</span>
+            Our Recent Work
           </motion.h2>
           <BlurTypeText
             text="Explore some of the successful Shopify stores we've built for clients worldwide."
