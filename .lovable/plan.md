@@ -1,24 +1,37 @@
-# Color Palette Update: Charcoal + Soft Teal
 
-## Current Problem
 
-The deep blue accent (`215 70% 45%`) lacks visual punch and blends into the dark primary, creating poor contrast and a flat feel.
+# Color Palette Overhaul: Midnight + Electric Violet (Dark Mode)
 
-## New Palette
+## Palette
 
 ```text
-Primary (text/buttons):  Charcoal    → 220 20% 12%
-Foreground:              Dark gray   → 220 15% 10%
-Accent:                  Soft Teal   → 168 64% 52%  (#2DD4BF)
-Accent Glow:             Bright Teal → 168 70% 58%
-Accent Muted:            Light Teal  → 168 30% 90%
-Ring:                    Teal        → 168 64% 52%
+Background:        230 25% 7%    (#0F0F1A)  — deep midnight
+Foreground:        210 20% 92%   (#E2E8F0)  — soft white text
+Card:              230 20% 10%   (#161625)  — slightly lighter dark
+Primary:           263 70% 50%   (#8B5CF6)  — electric violet (buttons, CTAs)
+Primary-fg:        0 0% 100%    (#FFFFFF)
+Secondary:         230 15% 14%   (#1E1E2E)  — muted dark panel
+Muted:             230 15% 16%   (#252538)
+Muted-fg:          215 15% 55%   (#8294AA)
+Accent:            263 70% 50%   (#8B5CF6)  — violet
+Accent-fg:         0 0% 100%
+Border:            230 15% 18%   (#2A2A3D)
+Ring:              263 70% 50%
+Accent-glow:       263 80% 60%   (#A78BFA)
+Accent-muted:      263 30% 15%   (#2D2250)
 ```
-
-This gives strong contrast on white backgrounds, clear CTA visibility, and a modern agency aesthetic.
 
 ## Changes
 
-1. `**src/index.css**` — Update all accent, ring, glow, and muted accent CSS variables to teal values. Update hero-gradient and cta-gradient to use teal tints instead of blue.
-2. `**src/components/ServicesSection.tsx**` — Update icon background from `accent/15` to use the new teal, ensuring the icon color (`text-accent`) is visible (teal on light teal bg).
-3. **No other file changes needed** — All components already reference `accent`, `accent-foreground`, `primary`, etc. via CSS variables, so the palette swap propagates automatically.
+1. **`src/index.css`** — Replace all `:root` CSS variables with the dark palette values above. Update `cta-gradient` and `btn-glow` to use violet hues instead of blue. Remove `hero-gradient` if still present.
+
+2. **`src/components/CTABanner.tsx`** — The banner uses `bg-primary` which will now be violet. The decorative circles use `bg-primary-foreground/5` which will be white/5 on dark — works well.
+
+3. **`src/components/FinalCTA.tsx`** — The `cta-gradient` class needs to use dark tones. Form inputs using `bg-background/80` will be dark. The info card `bg-background/60` will blend into the dark theme.
+
+4. **All section components** — Section labels already use `text-accent` which will become violet. Headings use `text-foreground` which becomes light text. All should work automatically via CSS variables.
+
+5. **`src/components/Navbar.tsx`** — Currently uses `bg-background/80` with `backdrop-blur`. Will naturally adapt to dark translucent nav.
+
+6. **No structural changes needed** — The entire site uses CSS variables, so swapping the palette in `index.css` propagates everywhere. Only the gradient utilities need manual update.
+
