@@ -11,7 +11,9 @@ export default function CTABanner() {
         initial={{ opacity: 0, y: 30 }}
         animate={isVisible ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6 }}
-        className="max-w-5xl mx-auto bg-primary text-primary-foreground rounded-3xl p-10 md:p-16 flex flex-col md:flex-row items-center justify-between gap-8 overflow-hidden relative"
+        className="max-w-5xl mx-auto rounded-3xl p-10 md:p-16 flex flex-col md:flex-row items-center justify-between gap-8 overflow-hidden relative"
+        style={{ backgroundColor: '#a7f3d0' }}
+
       >
         <div className="absolute -top-20 -right-20 w-60 h-60 rounded-full bg-primary-foreground/5" />
         <div className="absolute -bottom-16 -left-16 w-48 h-48 rounded-full bg-primary-foreground/5" />
