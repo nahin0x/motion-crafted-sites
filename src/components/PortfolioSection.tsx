@@ -149,7 +149,7 @@ export default function PortfolioSection() {
           <BlurTypeText
             text="Portfolio"
             isVisible={isVisible}
-            className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-3"
+            className="text-sm font-medium text-accent uppercase tracking-wider mb-3"
           />
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -157,8 +157,7 @@ export default function PortfolioSection() {
             transition={{ duration: 0.6, delay: 0.15 }}
             className="text-3xl md:text-5xl font-bold text-foreground"
           >
-            Our Recent{" "}
-            <span className="font-serif-display italic font-normal">Work</span>
+            Our Recent Work
           </motion.h2>
           <BlurTypeText
             text="Explore some of the successful Shopify stores we've built for clients worldwide."

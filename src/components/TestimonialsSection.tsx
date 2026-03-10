@@ -13,7 +13,7 @@ export default function TestimonialsSection() {
           <BlurTypeText
             text="Testimonials"
             isVisible={isVisible}
-            className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-3"
+            className="text-sm font-medium text-accent uppercase tracking-wider mb-3"
           />
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -21,8 +21,8 @@ export default function TestimonialsSection() {
             transition={{ duration: 0.6 }}
             className="text-3xl md:text-5xl font-bold text-foreground"
           >
-            What our <span className="font-serif-display italic font-normal">valued</span> clients
-            <br />are saying about us
+            What Our Valued Clients
+            <br />Are Saying About Us
           </motion.h2>
         </div>
 

@@ -41,7 +41,7 @@ function StepCard({ step, index }: { step: typeof steps[0]; index: number }) {
 
       <motion.div style={{ opacity }} className="hidden md:flex absolute left-1/2 top-4 -translate-x-1/2 z-10">
         <div className="w-12 h-12 rounded-full bg-primary border-4 border-background flex items-center justify-center">
-          <step.icon className="w-5 h-5 text-primary-foreground" />
+          <span className="text-sm font-bold text-primary-foreground">{index + 1}</span>
         </div>
       </motion.div>
 
@@ -56,7 +56,7 @@ function StepCard({ step, index }: { step: typeof steps[0]; index: number }) {
           </div>
 
           <div className="md:hidden mb-3 w-10 h-10 rounded-full bg-primary flex items-center justify-center">
-            <step.icon className="w-4 h-4 text-primary-foreground" />
+            <span className="text-sm font-bold text-primary-foreground">{index + 1}</span>
           </div>
 
           <h3 className="text-lg font-bold text-foreground mb-2">{step.title}</h3>
@@ -77,13 +77,13 @@ export default function TeamSection() {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section ref={ref} className="py-28 px-6 bg-muted/30">
+    <section id="how-it-works" ref={ref} className="py-28 px-6 bg-muted/30">
       <div className="max-w-4xl mx-auto">
         <div className="text-center">
           <BlurTypeText
             text="Our Process"
             isVisible={isVisible}
-            className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-3"
+            className="text-sm font-medium text-accent uppercase tracking-wider mb-3"
           />
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -91,8 +91,7 @@ export default function TeamSection() {
             transition={{ duration: 0.6, delay: 0.15 }}
             className="text-3xl md:text-5xl font-bold text-foreground"
           >
-            How Does It{" "}
-            <span className="font-serif-display italic font-normal">Work</span>
+            How Does It Work
           </motion.h2>
           <BlurTypeText
             text="Our proven 5-step process to deliver exceptional results"

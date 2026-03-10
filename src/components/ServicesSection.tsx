@@ -22,7 +22,7 @@ export default function ServicesSection() {
           <BlurTypeText
             text="What We Do"
             isVisible={isVisible}
-            className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-3"
+            className="text-sm font-medium text-accent uppercase tracking-wider mb-3"
           />
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -30,8 +30,7 @@ export default function ServicesSection() {
             transition={{ duration: 0.6, delay: 0.15 }}
             className="text-3xl md:text-5xl font-bold text-foreground"
           >
-            Our{" "}
-            <span className="font-serif-display italic font-normal">Services</span>
+            Our Services
           </motion.h2>
           <BlurTypeText
             text="End-to-end Shopify solutions designed to help your brand grow from zero to one."

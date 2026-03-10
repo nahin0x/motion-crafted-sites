@@ -69,7 +69,7 @@ export default function PricingSection() {
           <BlurTypeText
             text="Pricing"
             isVisible={isVisible}
-            className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-3"
+            className="text-sm font-medium text-accent uppercase tracking-wider mb-3"
           />
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -77,8 +77,7 @@ export default function PricingSection() {
             transition={{ duration: 0.6, delay: 0.15 }}
             className="text-3xl md:text-5xl font-bold text-foreground"
           >
-            Choose Your Best{" "}
-            <span className="font-serif-display italic font-normal">Package</span>
+            Choose Your Best Package
           </motion.h2>
         </div>
 
@@ -106,7 +105,7 @@ export default function PricingSection() {
               <p className="mt-2 text-xs font-medium opacity-80">{p.delivery}</p>
 
               <div className="mt-6 mb-2">
-                <p className="text-xs font-semibold opacity-80 mb-3">What's Included</p>
+                <p className="text-sm font-bold opacity-90 mb-3">What's Included</p>
               </div>
               <ul className="space-y-2 flex-1">
                 {p.features.map((f) => (

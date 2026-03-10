@@ -49,8 +49,7 @@ export default function HeroSection() {
             transition={{ duration: 0.3, delay: 0.2 }}
           >
             <h1 className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold leading-tight tracking-tight text-foreground">
-              {typed1}
-              <span className="font-serif-display italic font-normal">{typed2}</span>
+              {typed1}{typed2}
               <motion.span
                 animate={{ opacity: showCursor ? 1 : 0 }}
                 className="inline-block w-[3px] h-[0.8em] bg-foreground ml-1 align-middle"
@@ -122,7 +121,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="relative w-full aspect-video rounded-2xl overflow-hidden bg-muted/40 border border-border"
+          className="relative w-full aspect-video rounded-2xl overflow-hidden bg-muted/40 border border-border shadow-none"
         >
           {isPlaying ? (
             <iframe
