@@ -30,8 +30,7 @@ export default function AboutStats() {
             transition={{ duration: 0.6, delay: 0.15 }}
             className="text-3xl md:text-5xl font-bold text-foreground"
           >
-            Why Choose{" "}
-            <span className="font-serif-display italic font-normal">DEVZeroOne</span>
+            Why Choose DEVZeroOne
           </motion.h2>
         </div>
 
