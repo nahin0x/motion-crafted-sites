@@ -49,7 +49,7 @@ function XIcon({ className }: { className?: string }) {
 
 export default function TeamMembersSection() {
   const { ref, isVisible } = useScrollAnimation();
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(0);
 
   return (
     <section ref={ref} className="py-28 px-6 bg-muted/30">
