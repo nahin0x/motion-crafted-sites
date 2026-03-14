@@ -112,7 +112,7 @@ export default function TeamMembersSection() {
                       href={member.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white hover:bg-white/30 transition-colors"
+                      className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white hover:bg-primary hover:text-primary-foreground transition-colors"
                     >
                       <Linkedin className="w-4 h-4" />
                     </a>
