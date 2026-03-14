@@ -85,7 +85,7 @@ export default function TeamMembersSection() {
                 onMouseLeave={() => setHoveredIndex(0)}
                 className="relative h-full rounded-3xl overflow-hidden cursor-pointer"
                 style={{
-                  flex: isHovered ? 3 : hasHover ? 0.8 : 1,
+                  flex: isHovered ? 3 : hasHover ? 1.2 : 1,
                   transition: "flex 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
                 }}
               >
