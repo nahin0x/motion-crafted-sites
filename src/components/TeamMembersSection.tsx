@@ -82,7 +82,7 @@ export default function TeamMembersSection() {
                 animate={isVisible ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.1 + i * 0.1 }}
                 onMouseEnter={() => setHoveredIndex(i)}
-                onMouseLeave={() => setHoveredIndex(null)}
+                onMouseLeave={() => setHoveredIndex(0)}
                 className="relative h-full rounded-3xl overflow-hidden cursor-pointer"
                 style={{
                   flex: isHovered ? 3 : hasHover ? 0.8 : 1,
