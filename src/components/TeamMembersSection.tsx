@@ -49,7 +49,7 @@ function XIcon({ className }: { className?: string }) {
 
 export default function TeamMembersSection() {
   const { ref, isVisible } = useScrollAnimation();
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(0);
 
   return (
     <section ref={ref} className="py-28 px-6 bg-muted/30">
@@ -82,7 +82,7 @@ export default function TeamMembersSection() {
                 animate={isVisible ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.1 + i * 0.1 }}
                 onMouseEnter={() => setHoveredIndex(i)}
-                onMouseLeave={() => setHoveredIndex(null)}
+                onMouseLeave={() => setHoveredIndex(0)}
                 className="relative h-full rounded-3xl overflow-hidden cursor-pointer"
                 style={{
                   flex: isHovered ? 3 : hasHover ? 0.8 : 1,
